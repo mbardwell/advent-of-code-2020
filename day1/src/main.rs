@@ -13,7 +13,20 @@ fn find_sum(sum: i32, arr: Vec<i32>) {
     }
 }
 
+fn find_sum3(sum: i32, arr: Vec<i32>) {
+    for outer in &arr {
+        for inner in &arr {
+            for more_inner in &arr {
+                if (outer + inner + more_inner) == sum {
+                    println!("The 3 answer is {}", outer*inner*more_inner);
+                }
+            }
+        }
+    }
+}
+
 fn read(path: &str) -> Result<Vec<i32>, Error> {
+    //https://users.rust-lang.org/t/reading-integers-from-a-file-into-vector/17517/5
     let file = File::open(path)?; // open file by given path
     // wrap file into generic buffered reader, it will use 4 KB buffer internally
     // to reduce number of syscalls, thus improving performance
@@ -44,6 +57,11 @@ fn main() {
         process::exit(1);
     });
     find_sum(sum, contents);
+    let contents = read(filename).unwrap_or_else(|err| {
+        println!("read error: {}", err);
+        process::exit(1);
+    });
+    find_sum3(sum, contents);
 }
 
 fn parse_config(args: &[String]) -> (i32, &str) {
