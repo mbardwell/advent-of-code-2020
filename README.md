@@ -7,7 +7,10 @@ Yes, I should only have one *find_sum* function
 `python cheat.py day3.input`
 # Day4
 `dune exec bin/main.exe day4.input` - not complete
+`python cheat.py` - only #1
 # Day5
 Not attempted
 # Day 6
 `dune exec bin/main.exe day6.input` - not complete
+# Day 9
+`python cheat.py`
