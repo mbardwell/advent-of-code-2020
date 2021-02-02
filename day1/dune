@@ -1,0 +1,4 @@
+(executable
+ (name day1)
+ (libraries obus lwt.unix)
+ (preprocess (pps lwt_ppx)))
