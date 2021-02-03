@@ -1,4 +1,17 @@
 (executable
  (name day1)
+ (modules day1)
  (libraries obus lwt.unix)
+ (preprocess (pps lwt_ppx)))
+
+(executable
+ (name ping)
+ (modules ping)
+ (libraries obus lwt.unix mylib)
+ (preprocess (pps lwt_ppx)))
+
+(executable
+ (name pong)
+ (modules pong)
+ (libraries obus lwt.unix mylib)
  (preprocess (pps lwt_ppx)))

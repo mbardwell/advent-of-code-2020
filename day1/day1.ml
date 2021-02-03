@@ -5,7 +5,7 @@ let filename = ref ""
 
 let main = begin
   let speclist = [
-    ("-v", Set verbose, "Useless use file arg");
+    ("-v", Set verbose, "Useless verbose arg");
     ("-n", Set_string filename, "Input file");
   ] in
   let usage_msg = "Give me your file, human. Options available:" in

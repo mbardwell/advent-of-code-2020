@@ -1,0 +1,4 @@
+
+interface org.foo.bar {
+  method Ping : (_ : string) -> (_ : string)
+}
